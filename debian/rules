@@ -1,0 +1,8 @@
+#!/usr/bin/make -f
+
+UPSTREAM_GIT = git://github.com/openstack/os-collect-config.git
+include /usr/share/openstack-pkg-tools/pkgos.make
+
+%:
+	dh $@ --buildsystem=python_distutils --with python2
+
