@@ -44,12 +44,12 @@ Depends: python-anyjson (>= 0.3.3),
          ${python:Depends}
 Recommends: ${python:Recommends}
 Description: collect and cache metadata, run hooks on changes
- os-collect-config collects collects data from defined configuration sources
- and runs a defined hook whenever the metadata has changed. You must define
- what sources to collect configuration data from in os-collect-config
- configuration file at /etc/os-collect-config/sources.ini. These sources will
- be polled and whenever any of them changes, default.command will be run. A
- file will be written to the cache dir, os_config_files.json, which will be a
- json list of the file paths to the current copy of each metadata source. This
- list will also be set as a colon separated list in the environment variable
- OS_CONFIG_FILES for the command that is run.
+ os-collect-config collects data from defined configuration sources and runs a
+ defined hook whenever the metadata has changed. You must define what sources
+ to collect configuration data from in os-collect-config configuration file at
+ /etc/os-collect-config/sources.ini. These sources will be polled and whenever
+ any of them changes, default.command will be run. A file will be written to
+ the cache dir, os_config_files.json, which will be a json list of the file
+ paths to the current copy of each metadata source. This list will also be set
+ as a colon separated list in the environment variable OS_CONFIG_FILES for the
+ command that is run.
