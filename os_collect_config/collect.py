@@ -28,6 +28,7 @@ from os_collect_config import common
 from os_collect_config import ec2
 from os_collect_config import exc
 from os_collect_config import heat_local
+from os_collect_config import version
 from oslo.config import cfg
 
 DEFAULT_COLLECTORS = ['heat_local', 'ec2', 'cfn']
@@ -52,7 +53,7 @@ opts = [
                 help='Pass this option to make os-collect-config exit after'
                 ' one execution of command. This behavior is implied if no'
                 ' command is specified.'),
-    cfg.FloatOpt('polling-interval', short='i', default=300,
+    cfg.FloatOpt('polling-interval', short='i', default=30,
                  help='When running continuously, pause this many seconds'
                       ' between collecting data.'),
     cfg.BoolOpt('print-cachedir',
@@ -61,7 +62,7 @@ opts = [
     cfg.BoolOpt('force',
                 default=False,
                 help='Pass this to force running the command even if nothing'
-                ' has changed.'),
+                ' has changed. Implies --one-time.'),
     cfg.BoolOpt('print', dest='print_only',
                 default=False,
                 help='Query normally, print the resulting configs as a json'
@@ -167,7 +168,8 @@ def getfilehash(files):
 def __main__(args=sys.argv, requests_impl_map=None):
     signal.signal(signal.SIGHUP, reexec_self)
     setup_conf()
-    CONF(args=args[1:], prog="os-collect-config")
+    CONF(args=args[1:], prog="os-collect-config",
+         version=version.version_info.version_string())
 
     # This resets the logging infrastructure which prevents capturing log
     # output in tests cleanly, so should only be called if there isn't already
@@ -184,6 +186,9 @@ def __main__(args=sys.argv, requests_impl_map=None):
         raise exc.InvalidArguments(
             'Unknown collectors %s. Valid collectors are: %s' %
             (list(unknown_collectors), DEFAULT_COLLECTORS))
+
+    if CONF.force:
+        CONF.set_override('one_time', True)
 
     config_files = CONF.config_file
     config_hash = getfilehash(config_files)
