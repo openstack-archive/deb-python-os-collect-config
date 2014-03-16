@@ -2,4 +2,4 @@ python-os-collect-config (0.1.11-1) experimental; urgency=low
 
   * Initial release. (Closes: #732173)
 
- -- Thomas Goirand <zigo@debian.org>  Tue, 01 Oct 2013 18:45:59 +0800
+ -- Thomas Goirand <zigo@debian.org>  Sun, 16 Mar 2014 16:14:56 +0800
