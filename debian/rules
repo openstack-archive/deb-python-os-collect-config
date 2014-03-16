@@ -9,5 +9,10 @@ export OSLO_PACKAGE_VERSION=$(VERSION)
 
 override_dh_auto_test:
 ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
-	python setup.py testr --slowest --testr-args='--subunit  '
+	set -e && set -x && \
+		TEMP_REZ=`mktemp -t` && \
+		python setup.py testr --slowest --testr-args='--subunit  ' \
+			| tee $$TEMP_REZ | subunit2pyunit && \
+		cat $$TEMP_REZ | subunit-stats && \
+		rm -f $$TEMP_REZ
 endif
