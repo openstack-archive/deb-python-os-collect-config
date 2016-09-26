@@ -1,0 +1,8 @@
+Code-Review+2: Ondřej Nový <novy@ondrej.org>
+Workflow+1: Ondřej Nový <novy@ondrej.org>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Mon, 26 Sep 2016 19:06:50 +0000
+Reviewed-on: https://review.openstack.org/376832
+Project: openstack/deb-python-os-collect-config
+Branch: refs/heads/debian/newton
