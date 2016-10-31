@@ -1,0 +1,9 @@
+Code-Review+2: Ben Nemec <openstack@nemebean.com>
+Code-Review+2: Steven Hardy <shardy@redhat.com>
+Workflow+1: Steven Hardy <shardy@redhat.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Tue, 25 Oct 2016 12:43:45 +0000
+Reviewed-on: https://review.openstack.org/385196
+Project: openstack/deb-python-os-collect-config
+Branch: refs/heads/master
