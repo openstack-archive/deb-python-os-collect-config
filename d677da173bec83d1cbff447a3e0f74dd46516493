@@ -1,0 +1,9 @@
+Code-Review+2: James Slagle <jslagle@redhat.com>
+Code-Review+2: Steve Baker <sbaker@redhat.com>
+Workflow+1: Steve Baker <sbaker@redhat.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Mon, 06 Mar 2017 01:12:21 +0000
+Reviewed-on: https://review.openstack.org/420823
+Project: openstack/deb-python-os-collect-config
+Branch: refs/heads/master
