@@ -1,0 +1,9 @@
+Code-Review+2: James Slagle <jslagle@redhat.com>
+Code-Review+2: Ben Nemec <openstack@nemebean.com>
+Workflow+1: Ben Nemec <openstack@nemebean.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Tue, 11 Apr 2017 20:25:06 +0000
+Reviewed-on: https://review.openstack.org/444898
+Project: openstack/deb-python-os-collect-config
+Branch: refs/heads/master
